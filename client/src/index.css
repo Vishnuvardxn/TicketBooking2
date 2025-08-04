@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: rgba(100, 100, 100, 0.5);
+	-webkit-box-shadow: 0 0 1px #babac0;
+}
+
+body {
+	min-width: 350px; /* Suppose you want minimum width of 1000px */
+	width: auto !important; /* Firefox will set width as auto */
+	width: 350px; /* As IE6 ignores !important it will set width as 1000px; */
+}
+
+@media print {
+	@page {
+		margin: 1cm;
+		size: auto;
+	}
+	
+	body {
+		margin: 0;
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
+	}
+
+	.print-only {
+		display: block !important;
+	}
+
+	img {
+		display: block !important;
+		break-inside: avoid;
+	}
+
+	.break-before-page {
+		break-before: page;
+	}
+}
